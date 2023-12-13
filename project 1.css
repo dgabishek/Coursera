@@ -1,0 +1,110 @@
+*{
+    box-sizing: border-box;
+    margin:0px;
+}
+body{
+    margin:20px;
+}
+.one{
+    text-align:center;
+}
+.main{
+    height:500px;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.box{
+    width:250px;
+    height:250px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    background-color:gray;
+    font-size:20px;
+    border-radius: 5%;
+    border:2px solid black ;
+    position: relative;
+	overflow-x: scroll;
+    overflow-y: scroll;
+}
+.box::-webkit-scrollbar{
+    display:none;
+}
+.box-1{
+    height: 30px;
+    width: 150px;
+    text-align: center;
+    border-bottom-left-radius: 5%;
+    background-color: red;
+    position: absolute;
+    top:0px;
+    right:0px;
+}
+.box-2{
+    display: flex;
+    width:fit-content;
+    padding-top: 50px;
+    font-size: x-small;
+    justify-content: center;
+}
+.color-1{
+    background-color: pink;
+    color:black;
+}
+.color-2{
+    background-color: red;
+    color:white;
+}
+.color-3{
+    background-color: burlywood;
+    color:black;
+}
+
+/** DESCTOP VIEW **/
+/** JUST GAVE DEFAULT BECAUSE ON DESCTOP IT WORKS DEFAULT **/
+
+@media (width:992px){
+    :default
+}
+
+/** TABLET VIEW **/
+
+@media (767px <= width < 992px){
+    .main{
+        height:400px;
+        width: 700px;
+        margin-left: 3%;
+        display: grid;
+        grid-template-columns:repeat(2,1fr);
+        gap:1rem;
+    }
+    .box{
+        width:100%;
+        height:100%;
+    }
+    .box:last-child{
+        grid-area:2/1/3/-1;
+        width:fit-content;
+        border-radius:initial;
+    }
+    .box-2{
+        padding-top:55px;
+		margin:6px 6px;
+    }
+}
+
+/** MOBILE VIEW **/
+
+@media (max-width:766px){
+    .one{
+        padding-right: 500px;
+        text-align: unset;
+    }
+    .main{
+        display: flex;
+        gap:1rem;
+        flex-direction: column;
+        margin:20px;
+    }
+}
